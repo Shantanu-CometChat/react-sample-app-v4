@@ -10,6 +10,26 @@ import { UIKitSettingsBuilder } from '@cometchat/uikit-shared';
 import { metaInfo } from "./metaInfo";
 
 (async () => {
+
+
+  const appId = process.env.APP_ID;
+  const region = process.env.REGION;
+  const authKey = process.env.AUTH_KEY;
+
+  if(appId){
+    AppConstants.APP_ID = appId;
+  }
+  if(region){
+    AppConstants.REGION = region;
+  }
+  if(authKey){
+    AppConstants.AUTH_KEY = authKey;
+  }
+
+  console.log("APPID ", appId)
+  console.log("REGION ", region)
+  console.log("AUTH_KEY ", authKey)
+
   const uiKitSettings = new UIKitSettingsBuilder()
   .setAppId(AppConstants.APP_ID)
   .setRegion(AppConstants.REGION)
